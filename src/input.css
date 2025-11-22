@@ -1,3 +1,21 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Define Colors */
+  --color-primary: #001524;
+  --color-secondary: #4B7F89;
+  --color-tertiary: #FFEED6;
+  --color-background: #A4BDC2;
+  --color-text: #001524;
+
+  /* Define Brand Colors (creates utilities like bg-brand-teal) */
+  --color-brand-dark: #001524;
+  --color-brand-teal: #009FA4;
+  --color-brand-light: #F0FDF4;
+  --color-brand-accent: #FF6B6B;
+  --color-brand-success: #4CAF50;
+
+  /* Define Fonts */
+  --font-sans: "Montserrat", sans-serif;
+  --font-heading: "Urbanist", sans-serif;
+}
