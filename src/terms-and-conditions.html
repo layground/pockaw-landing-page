@@ -204,5 +204,31 @@
         </div>
     </footer>
 
+    <button id="scrollTopBtn" aria-label="Scroll to top"
+        class="fixed bottom-8 right-8 z-40 bg-brand-teal text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 translate-y-10 pointer-events-none transition-all duration-300 hover:bg-brand-dark hover:-translate-y-1">
+        <i class="ti ti-arrow-up text-2xl"></i>
+    </button>
+
+    <script>
+        const scrollBtn = document.getElementById('scrollTopBtn');
+
+        // Show button when scrolled down 300px
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
+        });
+
+        // Smooth scroll to top on click
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
 </body>
 </html>

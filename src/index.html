@@ -94,7 +94,7 @@
                 </ul>
             </nav>
 
-            <div class="hidden md:flex items-center gap-3">
+            <div class="flex items-center gap-3">
                 <a href="https://github.com/layground/pockaw" target="_blank" aria-label="View on GitHub"
                 class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-brand-dark hover:bg-gray-200 transition-all hover:shadow-md transform hover:-translate-y-0.5">
                     <i class="ti ti-brand-github text-xl"></i>
@@ -381,5 +381,31 @@
             </div>
         </div>
     </footer>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top"
+        class="fixed bottom-8 right-8 z-40 bg-brand-teal text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 translate-y-10 pointer-events-none transition-all duration-300 hover:bg-brand-dark hover:-translate-y-1">
+        <i class="ti ti-arrow-up text-2xl"></i>
+    </button>
+
+    <script>
+        const scrollBtn = document.getElementById('scrollTopBtn');
+
+        // Show button when scrolled down 300px
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
+        });
+
+        // Smooth scroll to top on click
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
